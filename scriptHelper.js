@@ -69,14 +69,13 @@ function formSubmission (document, list, pilot, copilot, fuelLevel, cargoLevel) 
 }
 
 async function myFetch() {
-    let planetsReturned;
+    let planets;
 
-    planets = await fetch("https://handlers.education.launchcode.org/static/planets.json")
-        .then( function(response) {
+    planets = await fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
             return response.json()
          });
 
-    return planetsReturned;
+    return planets;
 }
 
 function pickPlanet(planets) {
@@ -90,3 +89,4 @@ module.exports.validateInput = validateInput;
 module.exports.formSubmission = formSubmission;
 module.exports.pickPlanet = pickPlanet; 
 module.exports.myFetch = myFetch;
+
